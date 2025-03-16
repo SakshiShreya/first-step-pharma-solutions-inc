@@ -1,0 +1,242 @@
+@use "sass:map";
+@use "./assets/scss/partials/theme";
+// @import "./assets/scss/partials/theme";
+
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video,
+button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  vertical-align: baseline;
+  background: transparent;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  margin-top: theme.$headerHeight;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+
+  &:before,
+  &:after {
+    content: "";
+    content: none;
+  }
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: inherit;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* change border colour to suit your needs */
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #cccccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+.roboto {
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.roboto-slab {
+  font-family: "Roboto Slab", serif;
+}
+
+h1,
+.h1 {
+  @include theme.fs-lh(32);
+}
+
+h2,
+.h2 {
+  @include theme.fs-lh(24);
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "md")) {
+    @include theme.fs-lh(28);
+  }
+}
+
+h3,
+.h3 {
+  @include theme.fs-lh(20);
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "md")) {
+    @include theme.fs-lh(24);
+  }
+}
+
+h4,
+.h4 {
+  @include theme.fs-lh(16);
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "md")) {
+    @include theme.fs-lh(18);
+  }
+}
+
+.buttonPrimary {
+  text-decoration: none;
+  color: theme.$white;
+  @include theme.z1;
+  &:hover {
+    text-decoration: underline;
+    @include theme.z1;
+  }
+}
+
+.container {
+  width: 100%;
+  padding-left: map.get(theme.$spacing, 16);
+  padding-right: map.get(theme.$spacing, 16);
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "sm")) and (max-width: map.get($map: theme.$breakpoints, $key: "md")) {
+    width: map.get($map: theme.$widths, $key: "sm");
+  }
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "md")) and (max-width: map.get($map: theme.$breakpoints, $key: "lg")) {
+    width: map.get($map: theme.$widths, $key: "md");
+  }
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "lg")) and (max-width: map.get($map: theme.$breakpoints, $key: "xl")) {
+    width: map.get($map: theme.$widths, $key: "lg");
+  }
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "xl")) {
+    width: map.get($map: theme.$widths, $key: "xl");
+  }
+}

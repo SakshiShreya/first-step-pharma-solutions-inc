@@ -1,0 +1,101 @@
+@use "sass:map";
+@use "../../assets/scss/partials/theme";
+
+.header {
+  height: theme.$headerHeight;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-color: map.get($map: theme.$primary, $key: "normal");
+}
+
+.img {
+  height: map.get(theme.$spacing, 16) * 3;
+  padding-right: map.get(theme.$spacing, 8);
+}
+
+.title {
+  @include theme.fs-lh(20);
+
+  @media (min-width: map.get($map: theme.$breakpoints, $key: "md")) {
+    @include theme.fs-lh(24);
+  }
+}
+
+.cont {
+  display: flex;
+  justify-content: space-between;
+  color: theme.$white;
+  padding: 0 map.get(theme.$spacing, 8);
+}
+
+.content {
+  height: theme.$headerHeight;
+  display: flex;
+  top: 0px;
+  align-items: center;
+}
+
+.link{
+  text-decoration: none;
+}
+
+.listDesktop {
+  height: theme.$headerHeight;
+  display: flex;
+  flex-direction: horizontal;
+  top: 0px;
+  align-items: center;
+}
+
+.linkDesktop {
+  padding: 0 map.get(theme.$spacing, 8);
+  color: theme.$white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.faBars {
+  font-size: map.get($map: theme.$font, $key: 28);
+}
+
+.faBars:hover {
+  color: map.get($map: theme.$gray, $key: "light11");
+  text-decoration: underline;
+}
+
+.open {
+  background-color: theme.$white;
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.close {
+  display: none;
+}
+
+.listMobile {
+  width: 100%;
+  margin: 50px auto;
+  position: fixed;
+  top: map.get(theme.$spacing, 16) * 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.linkMobile {
+  color: map.get($map: theme.$primary, $key: "normal");
+  text-decoration: none;
+  @include theme.fs-lh(24);
+  margin: map.get(theme.$spacing, 8) auto;
+  font-weight: 900;
+}
