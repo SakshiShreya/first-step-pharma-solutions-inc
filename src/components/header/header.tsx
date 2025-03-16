@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import fsLogo from "../../assets/images/firstStepLogo.svg";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import styles from "./Header.module.scss";
+import { Heading } from "@chakra-ui/react";
 
 interface Props {}
 
@@ -47,19 +48,23 @@ const Header: FunctionComponent<Props> = () => {
         <div className={styles.content}>
           <img className={styles.img} src={fsLogo} alt="" />
           <Link className={styles.link} to="/">
-            <h2 className={styles.title}>First Step Pharma Solutions</h2>
+            <Heading as="h2" className={styles.title}>
+              First Step Pharma Solutions Inc.
+            </Heading>
           </Link>
         </div>
         {dimensions.device === "desktop" ? (
           navigation
         ) : (
-          <FontAwesomeIcon
-            onClick={() => {
-              setIsOpen(true);
-            }}
-            icon={faBars}
-            className={`${styles.faBars} ${styles.content}`}
-          />
+          <div className={styles.content}>
+            <FontAwesomeIcon
+              onClick={() => {
+                setIsOpen(true);
+              }}
+              icon={faBars}
+              className={styles.faBars}
+            />
+          </div>
         )}
       </div>
       {dimensions.device !== "desktop" && (
@@ -68,15 +73,19 @@ const Header: FunctionComponent<Props> = () => {
             <div className={`${styles.cont} container`}>
               <div className={styles.content}>
                 <img className={styles.img} src={fsLogo} alt="" />
-                <h2 className={styles.title}>First Step Pharma Solutions</h2>
+                <Heading as="h2" className={styles.title}>
+                  First Step Pharma Solutions Inc.
+                </Heading>
               </div>
-              <FontAwesomeIcon
-                onClick={() => {
-                  setIsOpen(false);
-                }}
-                icon={faTimes}
-                className={`${styles.faBars} ${styles.content}`}
-              />
+              <div className={styles.content}>
+                <FontAwesomeIcon
+                  onClick={() => {
+                    setIsOpen(false);
+                  }}
+                  icon={faTimes}
+                  className={styles.faBars}
+                />
+              </div>
             </div>
           </div>
           {navigation}

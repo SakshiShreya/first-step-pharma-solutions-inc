@@ -15,11 +15,8 @@
 }
 
 .title {
-  @include theme.fs-lh(20);
-
-  @media (min-width: map.get($map: theme.$breakpoints, $key: "md")) {
-    @include theme.fs-lh(24);
-  }
+  line-height: 1.5rem;
+  max-width: 200px;
 }
 
 .cont {
@@ -36,7 +33,7 @@
   align-items: center;
 }
 
-.link{
+.link {
   text-decoration: none;
 }
 
@@ -63,7 +60,6 @@
 
 .faBars:hover {
   color: map.get($map: theme.$gray, $key: "light11");
-  text-decoration: underline;
 }
 
 .open {
