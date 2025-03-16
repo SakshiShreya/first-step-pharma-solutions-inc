@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "predeploy": "tsc -b && vite build --base=/first-step-pharma-solutions-inc",
+    "deploy": "gh-pages -d docs",
     "lint": "eslint .",
     "preview": "vite preview"
   },
